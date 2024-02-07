@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+
+    <title>Quiz</title>
+    <style>
+        body{
+        margin: 0%; /*per non avere margini*/
+        padding: 0%; /* per non avere spazi*/
+        font-family: Arial, Helvetica, sans-serif; /*per cambiare il font */
+        background:url('img/sfondo.jpg') fixed; /*fixed serve per non muovere l immagine durante lo scorrimento*/
+        background-size: cover;  /*per riempire tutta la pagina */
+        color: #333;
+    }
+           
+            
+
+        
+
+        #carouselExample{
+            background-color: rgba(235, 225, 172, 0.609);
+            border-radius: 20px;
+            
+            padding: 30px;
+            color: rgb(31, 29, 29);
+            margin-top: 30px;
+            text-align: center;
+            
+    }
+      
+       li {text-align: center; /* Allinea il testo a sinistra */
+    align-items: center; /* Allinea verticalmente al centro */
+    margin-bottom: 10px;
+    }
+        
+          
+        #conteggio{
+            background-color: bisque;
+            text-align: center;
+            
+    } 
+         nav{
+        background-color: #dc3545;
+        color: #fff;
+    }  
+        .navbar-brand {
+    color: rgba(235, 225, 172, 0.609) /* Imposta il colore del testo all'interno della classe navbar-brand */
+    } 
+      
+         ol {
+    list-style-position: inside;
+    text-align: left;
+   
+}
+
+       ol li {
+    text-align: center; 
+}
+            
+
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="quiz.html">
+            <img src="img/logoquiz.jpg" alt="Logo" width="100" height="40"  class="d-inline-block " style="border-radius: 20px;">
+            Signor Quiz
+          </a>
+        </div>
+      </nav>
+
+
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+                    <!-- Domanda 1 -->
+        <h3 class="text-danger">Quale delle seguenti dichiarazioni CSS è corretta per impostare un'immagine di sfondo che non si ripete e viene centrata orizzontalmente e verticalmente all'interno del suo contenitore?</h3>
+        <div id="domanda1">
+            <ol>
+                <li id="1">  background-repeat: no-repeat; background-position: center center;</li>
+                <li id="2"> background-repeat: none; background-position: center;</li>
+                <li id="3">background-repeat: no-repeat; background-position: center; </li>
+                <li id="4"> background-repeat: none; background-position: center center;</li>
+                
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero1" />
+            <button class="btn btn-danger" onclick="funzione1()">Verifica</button>
+            <p id="feedback1"></p>
+        </div>
+
+     </div>
+
+
+
+
+          
+          <div class="carousel-item">
+
+
+
+                    <!-- Domanda 2 -->
+        <h3 class="text-danger">Qual è il valore predefinito della proprietà CSS "position"?</h3>
+        <div id="domanda2">
+            <ol>
+                <li id="5"> static </li>
+                <li id="6">absolute</li>
+                <li id="7"> relative</li>
+                <li id="8">  fixed</li>
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero2" />
+            <button class="btn btn-danger" onclick="funzione2()">Verifica</button>
+            <p id="feedback2"></p>
+        </div>
+
+      </div>
+
+
+
+          <div class="carousel-item">
+        <!-- Domanda 3 -->
+        <h3 class="text-danger">Quale delle seguenti dichiarazioni CSS è corretta per applicare un'ombra diffusa ad un elemento?</h3>
+        <div id="domanda3">
+            <ol>
+                <li id="9"> shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+                <li id="10"> text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+                <li id="11"> box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+                <li id="12"> drop-shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero3" />
+            <button class="btn btn-danger" onclick="funzione3()">Verifica</button>
+            <p id="feedback3"></p>
+        </div>
+
+          </div>
+
+
+          <div class="carousel-item">
+        <!-- Domanda 4 -->
+        <h3 class="text-danger">Quale delle seguenti dichiarazioni JavaScript crea un nuovo oggetto?</h3>
+        <div id="domanda4">
+            <ol>
+                <li id="13">  let obj = {};</li>
+                <li id="14"> let obj = new Object();</li>
+                <li id="15"> let obj = Object.create({});</li>
+                <li id="16">let obj = Object();</li>
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero4" />
+            <button class="btn btn-danger" onclick="funzione4()">Verifica</button>
+            <p id="feedback4"></p>
+        </div>
+        </div>
+
+
+        <div class="carousel-item">
+
+                    <!-- Domanda 5 -->
+        <h3 class="text-danger">Qual è il risultato dell'espressione Boolean([]) in JavaScript?</h3>
+        <div id="domanda5">
+            <ol>
+                <li id="17">false</li>
+                <li id="18">[]</li>
+                <li id="19">undefined</li>
+                <li id="20">true </li>
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero5" />
+            <button class="btn btn-danger" onclick="funzione5()">Verifica</button>
+            <p id="feedback5"></p>
+        </div>
+   </div>
+
+
+
+        <div class="carousel-item">
+    <!--domanda 6-->
+    <h3 class="text-danger">Quale delle seguenti dichiarazioni JavaScript crea una variabile globale?</h3>
+    <div class="container mt-5 " id="domanda6">
+        <ol>
+            <li id="25">let varName;</li>
+            <li id="26">const varName = 10;</li>
+            <li id="27">const varName</li>
+            <li id="28">var varName = 5</li>
+        </ol>
+        <p>Inserisci una risposta:</p>
+        <input type="number" id="numero6" />
+        <button class="btn btn-danger" onclick="funzione6()">Verifica</button>
+        <p id="feedback6"></p>
+    </div>
+      </div>
+
+
+
+        <div class="carousel-item">
+        <!-- Domanda 7 -->
+        <h3 class="text-danger">Quale dei seguenti operatori JavaScript restituisce true se almeno uno degli operandi è true?</h3>
+        <div id="domanda7">
+            <ol>
+                <li id="29"> || </li>
+                <li id="30"> && </li>
+                <li id="31"> !</li>
+                <li id="32"> &</li>
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero7" />
+            <button class="btn btn-danger" onclick="funzione7()">Verifica</button>
+            <p id="feedback7"></p>
+        </div>
+       </div>
+
+
+        <div class="carousel-item">
+                    <!-- Domanda 8 -->
+        <h3 class="text-danger">Qual è il tag corretto per definire la parte principale di un documento HTML?
+        </h3>
+        <div id="domanda8">
+            <ol>
+                <li id="33"> body</li>
+                <li id="34"> section</li>
+                <li id="35"> main</li>
+                <li id="36"> content</li>
+            </ol>
+            <p>Inserisci una risposta:</p>
+            <input type="number" id="numero8" />
+            <button class="btn btn-danger" onclick="funzione8()">Verifica</button>
+            <p id="feedback8"></p>
+        </div>
+      </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 9 -->
+                        <h3 class="text-danger">Quale attributo HTML viene utilizzato per specificare un'abbreviazione o un acronimo per un elemento?
+                        </h3>
+                        <div id="domanda9">
+                            <ol>
+                                <li id="37"> acronym</li>
+                                <li id="38"> abbr</li>
+                                <li id="39"> title</li>
+                                <li id="40"> alt</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero9" />
+                            <button class="btn btn-danger" onclick="funzione9()">Verifica</button>
+                            <p id="feedback9"></p>
+                   </div>            
+                  </div>
+
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 10 -->
+                        <h3 class="text-danger">Qual è il risultato della seguente dichiarazione CSS: "font-style: italic;"?
+                        </h3>
+                        <div id="domanda10">
+                            <ol>
+                                <li id="41">Il testo viene sottolineato.</li>
+                                <li id="42">Il testo viene reso in grassetto</li>
+                                <li id="43"> Il testo viene reso in maiuscolo</li>
+                                <li id="44"> Il testo viene reso in corsivo</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero10" />
+                            <button class="btn btn-danger" onclick="funzione10()">Verifica</button>
+                            <p id="feedback10"></p>
+                        </div>
+        </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 11 -->
+                        <h3 class="text-danger"> Quale selettore CSS è utilizzato per selezionare un elemento che viene visualizzato quando il puntatore del mouse si trova sopra di esso?
+                        </h3>
+                        <div id="domanda11">
+                            <ol>
+                                <li id="45">visited</li>
+                                <li id="46">focus</li>
+                                <li id="47">active</li>
+                                <li id="48">hover</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero11" />
+                            <button class="btn btn-danger" onclick="funzione11()">Verifica</button>
+                            <p id="feedback11"></p>
+                        </div>
+        </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 12 -->
+                        <h3 class="text-danger">Quale delle seguenti dichiarazioni CSS è corretta per creare un effetto di ombra intorno a un testo?
+                        </h3>
+                        <div id="domanda12">
+                            <ol>
+                                <li id="49">text-shadow: 1px 1px 1px #000</li>
+                                <li id="50"> shadow: 1px 1px 1px #000</li>
+                                <li id="51"> box-shadow: 1px 1px 1px #000</li>
+                                <li id="52"> text-effect: shadow 1px 1px #000;</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero12" />
+                            <button class="btn btn-danger" onclick="funzione12()">Verifica</button>
+                            <p id="feedback12"></p>
+                        </div>
+            
+        </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 13 -->
+                        <h3 class="text-danger">Perché ogni browser tende a mostrare le pagine caricate con delle differenze rispetto agli altri?
+                        </h3>
+                        <div id="domanda13">
+                            <ol>
+                                <li id="53">Perché le società sono in concorrenza tra di loro e si devono distinguere
+                                </li>
+                                <li id="54">Perché ogni browser utilizza un determinato tipo di motore di rendering.
+                                </li>
+                                <li id="55">Perché gli sviluppatori di browser non cercano di seguire gli standard web.</li>
+                                <li id="56">Perché usano tutti lo stesso motore di rendering, ma questo carica a diverse velocità variando i risultati</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero13" />
+                            <button class="btn btn-danger" onclick="funzione13()">Verifica</button>
+                            <p id="feedback13"></p>
+                        </div>            
+        </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 14 -->
+                        <h3 class="text-danger">quale tra queste soluzioni fa scomparire il testo all'interno del bottone in Internet Explorer 7?
+                        </h3>
+                        <div id="domanda14">
+                            <ol>
+                                <li id="57">position: relative; top: -50px;</li>
+                                <li id="58">text-indent: -9999px;</li>
+                                <li id="59">line-height: 9999px;</li>
+                                <li id="60">text-indent: -9999px</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero14" />
+                            <button class="btn btn-danger" onclick="funzione14()">Verifica</button>
+                            <p id="feedback14"></p>
+                        </div>
+            
+        </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 15 -->
+                        <h3 class="text-danger"> Quale delle seguenti dichiarazioni CSS è corretta per impostare un'immagine di sfondo che non si ripete e viene centrata orizzontalmente e verticalmente all'interno del suo contenitore?
+                        </h3>
+                        <div id="domanda15">
+                            <ol>
+                                <li id="61">background-repeat: none; background-position: center</li>
+                                <li id="62">background-repeat: no-repeat; background-position: center;
+                                </li>
+                                <li id="63"> background-repeat: no-repeat; background-position: center center;</li>
+                                <li id="64">background-repeat: none; background-position: center center</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero15" />
+                            <button class="btn btn-danger" onclick="funzione15()">Verifica</button>
+                            <p id="feedback15"></p>
+                        </div>
+        </div>
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 16 -->
+                        <h3 class="text-danger"> Qual è il valore predefinito della proprietà CSS "position"?
+                        </h3>
+                        <div id="domanda16">
+                            <ol>
+                                <li id="65">absolute</li>
+                                <li id="66"> fixed </li>
+                                <li id="67">relative </li>
+                                <li id="68"> static </li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero16" />
+                            <button class="btn btn-danger" onclick="funzione16()">Verifica</button>
+                            <p id="feedback16"></p>
+                        </div>            
+        </div>
+
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 17 -->
+                        <h3 class="text-danger"> Quale delle seguenti dichiarazioni CSS è corretta per applicare un'ombra diffusa ad un elemento?
+                        </h3>
+                        <div id="domanda17">
+                            <ol>
+                                <li id="69">box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+                                <li id="70">shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+                                <li id="71">text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);</li>
+                                <li id="72">drop-shadow: 0 0 10px rgba(0, 0, 0, 0.5)</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero17" />
+                            <button class="btn btn-danger" onclick="funzione17()">Verifica</button>
+                            <p id="feedback17"></p>
+                        </div>   
+        </div>
+
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 18 -->
+                        <h3 class="text-danger">Quale delle seguenti dichiarazioni JavaScript crea un nuovo oggetto?
+                        </h3>
+                        <div id="domanda18">
+                            <ol>
+                                <li id="73">let obj = {}; </li>
+                                <li id="74">let obj = Object.create({})</li>
+                                <li id="75">let obj = new Object(); </li>
+                                <li id="76"> let obj = Object()</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero18" />
+                            <button class="btn btn-danger" onclick="funzione18()">Verifica</button>
+                            <p id="feedback18"></p>
+                        </div>            
+        </div>
+
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 19 -->
+                        <h3 class="text-danger">Qual è il risultato dell'espressione Boolean([]) in JavaScript?</h3>
+                        <div id="domanda19">
+                            <ol>
+                                <li id="77">false</li>
+                                <li id="78">true</li>
+                                <li id="79">[]</li>
+                                <li id="80">undefined</li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero19" />
+                            <button class="btn btn-danger" onclick="funzione19()">Verifica</button>
+                            <p id="feedback19"></p>
+                        </div>
+            
+        </div>
+
+
+
+
+        <div class="carousel-item">
+                        <!-- Domanda 20 -->
+                        <h3 class="text-danger">Quale delle seguenti dichiarazioni JavaScript crea una variabile globale?
+                        </h3>
+                        <div id="domanda20">
+                            <ol>
+                                <li id="81">let varName</li>
+                                <li id="82">const varName = 10</li>
+                                <li id="83">const varName;</li>
+                                <li id="84">var varName = 5; </li>
+                            </ol>
+                            <p>Inserisci una risposta:</p>
+                            <input type="number" id="numero20" />
+                            <button class="btn btn-danger" onclick="funzione20()">Verifica</button>
+                            <p id="feedback20"></p>
+                        </div>
+            
+        </div>
+
+        </div>
+        <!--tasto per andare avanti-->
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+<br><br>
+<div class="d-flex justify-content-center align-items-center" >
+<div class="card"style="width: 18rem;" >
+    <img src="img/corretto.jpg" class="card-img-top" alt="corretto">
+    <div class="card-body">
+       <!-- Elemento per visualizzare il conteggio delle risposte corrette -->
+
+      <p class="card-text" id="conteggioRisposteCorrette">Conteggio risposte corrette: 0.</p>
+    </div>
+  </div>
+  </div>
+  <br><br><br><br><br><br>
+  
+      
+  
+  <footer class="text-center text-lg-start " style = "background-color: #dc3545;
+  color: #fff;">
+    
+ <br>
+            <div class="row mt-4"> <!-- Ridotto il margine superiore -->
+               
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2"> 
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-2"> 
+                        <i class="fas fa-gem me-2"></i>quiz bitCamp
+                    </h6>
+                    <p class="small"> 
+                        Esplora il mondo del codice con il nostro quiz da programmatore. Affronta domande avvincenti, metti alla prova le tue competenze e sorprenditi con il tuo livello di maestria informatica!
+                    </p>
+                </div>
+              
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-2"> 
+                        Developer
+                    </h6>
+                    <p class="small"><a href="https://www.linkedin.com/in/claudio-spiga-b24948285/" class="text-reset">Claudio Spiga <i class="fab fa-linkedin"></i> </a></p>
+                    <p class="small"><a href="#" class="text-reset">Giorgia <i class="fab fa-linkedin"></i> </a></p>
+                    <p class="small"><a href="#" class="text-reset">Claudio <i class="fab fa-linkedin"></i> </a></p>
+                    <p class="small"><a href="#" class="text-reset">Fabio <i class="fab fa-linkedin"></i> </a></p>
+                    <p class="small"><a href="#" class="text-reset">Francesco <i class="fab fa-linkedin"></i> </a></p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2"> 
+                    <h6 class="text-uppercase fw-bold mb-2"> 
+                        Contatti
+                    </h6>
+                    <p class="small"><i class="fas fa-home me-2"></i> Cagliari, Via Delle Magnolie 25 09047</p>
+                    <p class="small"><i class="fas fa-envelope me-2"></i>claudiospiga63@gmail.com</p>
+                    <p class="small"><i class="fas fa-phone me-2"></i>+ 01 234 567 88</p>
+                    <p class="small"><i class="fas fa-print me-2"></i>+ 01 234 567 89</p>
+                </div>     
+            </div>
+</footer>
+
+  
+    
+
+         <!--Javascript-->
+
+
+              <script>
+                var conteggioRisposteCorrette = 0;
+
+                //funzione 1
+    
+                function funzione1() {
+                    var nInserito = document.getElementById("numero1").value;
+                    var commento = document.getElementById("feedback1");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            // Incremento del conteggio delle risposte corrette
+                conteggioRisposteCorrette++;
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                     // Aggiornamento del conteggio delle risposte corrette
+        document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+                }
+    
+
+
+
+                //funzione 2
+                function funzione2() {
+                    var nInserito = document.getElementById("numero2").value;
+                    var commento = document.getElementById("feedback2");
+    
+                    switch (nInserito) {
+                        case "1":
+                            commento.innerHTML = "Risposta corretta!";
+                            // Incremento del conteggio delle risposte corrette
+                         conteggioRisposteCorrette++;
+                            break;
+                        case "2":
+                        case "3":
+                           
+                        case "4": commento.innerHTML = "Risposta errata, la 1 era quella corretta!";
+                            break;
+                            
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                     // Aggiornamento del conteggio delle risposte corrette
+        document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+    
+                }
+    
+                //funzione 3
+    
+                function funzione3() {
+                    var nInserito = document.getElementById("numero3").value;
+                    var commento = document.getElementById("feedback3");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "3": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+                            
+                        case "4": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                           
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+
+                //funzione 4
+    
+                function funzione4() {
+                    var nInserito = document.getElementById("numero4").value;
+                    var commento = document.getElementById("feedback4");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+                        case "3": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+                           
+                        case "4": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+                           
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+
+
+                //funzione 5
+    
+                function funzione5() {
+                    var nInserito = document.getElementById("numero5").value;
+                    var commento = document.getElementById("feedback5");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+    
+                //funzione 6
+    
+                function funzione6() {
+                    var nInserito = document.getElementById("numero6").value;
+                    var commento = document.getElementById("feedback6");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+
+
+                //funzione 7
+                function funzione7() {
+                    var nInserito = document.getElementById("numero7").value;
+                    var commento = document.getElementById("feedback7");
+    
+                    switch (nInserito) {
+                        case "1":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        case "2":
+                        case "3":
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 1 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+    
+                }
+
+
+    
+                //funzione 8
+    
+                function funzione8() {
+                    var nInserito = document.getElementById("numero8").value;
+                    var commento = document.getElementById("feedback8");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "3": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+                //funzione 9
+    
+                function funzione9() {
+                    var nInserito = document.getElementById("numero9").value;
+                    var commento = document.getElementById("feedback9");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+                        case "3": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+
+                //funzione 10
+    
+                function funzione10() {
+                    var nInserito = document.getElementById("numero10").value;
+                    var commento = document.getElementById("feedback10");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+
+    
+                //funzione 11
+    
+                function funzione11() {
+                    var nInserito = document.getElementById("numero11").value;
+                    var commento = document.getElementById("feedback11");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+
+
+
+                //funzione 12
+                function funzione12() {
+                    var nInserito = document.getElementById("numero12").value;
+                    var commento = document.getElementById("feedback12");
+    
+                    switch (nInserito) {
+                        case "1":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        case "2":
+                        case "3":
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 1 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+    
+                }
+
+
+    
+                //funzione 13
+    
+                function funzione13() {
+                    var nInserito = document.getElementById("numero13").value;
+                    var commento = document.getElementById("feedback13");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "3": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+
+                //funzione 14
+    
+                function funzione14() {
+                    var nInserito = document.getElementById("numero14").value;
+                    var commento = document.getElementById("feedback14");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+                        case "3": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+                //funzione 15
+    
+                function funzione15() {
+                    var nInserito = document.getElementById("numero15").value;
+                    var commento = document.getElementById("feedback15");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+    
+
+                //funzione 16
+    
+                function funzione16() {
+                    var nInserito = document.getElementById("numero16").value;
+                    var commento = document.getElementById("feedback16");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+
+
+
+                //funzione 17
+                function funzione17() {
+                    var nInserito = document.getElementById("numero17").value;
+                    var commento = document.getElementById("feedback17");
+    
+                    switch (nInserito) {
+                        case "1":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        case "2":
+                        case "3":
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 1 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+    
+                }
+    
+                //funzione 18
+    
+                function funzione18() {
+                    var nInserito = document.getElementById("numero18").value;
+                    var commento = document.getElementById("feedback18");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+                        case "3": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 3 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+
+
+                //funzione 19
+    
+                function funzione19() {
+                    var nInserito = document.getElementById("numero19").value;
+                    var commento = document.getElementById("feedback19");
+    
+                    switch (nInserito) {
+                        case "1": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+                        case "2": commento.innerHTML = "Risposta corretta!";
+                        conteggioRisposteCorrette++;
+
+                            break;
+                        case "3": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+    
+                        case "4": commento.innerHTML = "Risposta errata, la 2 era quella corretta!";
+                            break;
+    
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+
+                }
+    
+                //funzione 20
+    
+                function funzione20() {
+                    var nInserito = document.getElementById("numero20").value;
+                    var commento = document.getElementById("feedback20");
+    
+                    switch (nInserito) {
+                        case "1":
+                        case "2":
+                        case "3":
+                            commento.innerHTML = "Risposta errata, la 4 era quella corretta!";
+                            break;
+                        case "4":
+                            commento.innerHTML = "Risposta corretta!";
+                            conteggioRisposteCorrette++;
+
+                            break;
+                        default:
+                            commento.innerHTML = "Valore non compreso";
+                    }
+                    document.getElementById("conteggioRisposteCorrette").innerHTML = "Conteggio risposte corrette: " + conteggioRisposteCorrette;
+                     // Verifica se il conteggio raggiunge 20
+                     if (conteggioRisposteCorrette === 20) {
+                        alert("Hai vinto! Complimenti!");
+                     }else
+                     alert("Hai perso! Riprova!");
+                     
+
+                }
+     // Aggiornamento del conteggio delle risposte corrette
+    </script>
+    
+    
+</body>
+</html>
